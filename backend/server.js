@@ -4,6 +4,7 @@ import colors from 'colors'
 import connectDB from './config/db.js'
 import { notFound, errorHandler } from './middleware/errorMiddleware.js'
 import productRoutes from './routes/productRoutes.js'
+import userRoutes from './routes/userRoutes.js'
 dotenv.config()
 
 connectDB()
@@ -11,6 +12,7 @@ connectDB()
 const app = express()
 app.use(express.json())
 app.use('/api/v1/products', productRoutes)
+app.use('/api/v1/users', userRoutes)
 app.use(notFound)
 app.use(errorHandler)
 const PORT = 8080
