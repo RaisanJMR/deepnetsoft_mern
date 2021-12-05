@@ -7,7 +7,8 @@ import Loader from '../components/Loader'
 function HomeScreen() {
   const dispatch = useDispatch()
   const productList = useSelector((state) => state.productList)
-  console.log(productList)
+  const userLogin = useSelector((state) => state.userLogin)
+  const { userDetails } = userLogin
   const { loading, error, products } = productList
   useEffect(() => {
     dispatch(listProducts())
@@ -44,7 +45,7 @@ function HomeScreen() {
               ))}
             </tbody>
           </Table>
-          <Button variant="primary"> add product</Button>
+          {userDetails ? <Button variant='primary'> add product</Button> : null}
         </>
       )}
     </Container>
