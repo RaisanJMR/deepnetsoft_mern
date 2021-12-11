@@ -14,10 +14,9 @@ function LoginScreen() {
   const [password, setPassword] = useState('')
   const dispatch = useDispatch()
   const userLogin = useSelector((state) => state.userLogin)
-  console.log('USER LOGIN DETAILS->', userLogin)
   const { loading, error, userDetails } = userLogin
   const redirect = location.search ? location.search.split('=')[1] : '/'
-  console.log(redirect)
+  
   useEffect(() => {
     // redirect to home page if user exist's
     if (userDetails) {

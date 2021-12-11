@@ -4,6 +4,7 @@ import { Container, Table, Button } from 'react-bootstrap'
 import { listProducts } from '../actions/productActions'
 import Message from '../components/Message'
 import Loader from '../components/Loader'
+import {Link} from 'react-router-dom'
 function HomeScreen() {
   const dispatch = useDispatch()
   const productList = useSelector((state) => state.productList)
@@ -45,7 +46,9 @@ function HomeScreen() {
               ))}
             </tbody>
           </Table>
+          <Link to='/create'>
           {userDetails ? <Button variant='primary'> add product</Button> : null}
+          </Link>
         </>
       )}
     </Container>

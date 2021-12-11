@@ -17,7 +17,6 @@ function RegisterScreen() {
   const [message, setMessage] = useState(null)
   const dispatch = useDispatch()
   const userRegister = useSelector((state) => state.userRegister)
-  console.log('USER REGISTER DETAILS->', userRegister)
   const { loading, error, userDetails } = userRegister
   const redirect = location.search ? location.search.split('=')[1] : '/'
   console.log(redirect)
